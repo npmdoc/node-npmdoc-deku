@@ -1,0 +1,1870 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>deku (v2.0.0-rc16)</a>
+</h1>
+<h4>Render interfaces using pure functions and virtual DOM</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deku">module deku</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.createApp">
+            function <span class="apidocSignatureSpan">deku.</span>createApp
+            <span class="apidocSignatureSpan">(container, dispatch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.element">
+            function <span class="apidocSignatureSpan">deku.</span>element
+            <span class="apidocSignatureSpan">(type, attributes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.h">
+            function <span class="apidocSignatureSpan">deku.</span>h
+            <span class="apidocSignatureSpan">(type, attributes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">deku.</span>create</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">deku.</span>diff</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">deku.</span>diff.Actions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">deku.</span>dom</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">deku.</span>renderString</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">deku.</span>setAttribute</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">deku.</span>string</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">deku.</span>update</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">deku.</span>vnode</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deku.create">module deku.create</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.create.default">
+            function <span class="apidocSignatureSpan">deku.create.</span>default
+            <span class="apidocSignatureSpan">(vnode, path, dispatch, context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deku.diff">module deku.diff</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.diffAttributes">
+            function <span class="apidocSignatureSpan">deku.diff.</span>diffAttributes
+            <span class="apidocSignatureSpan">(previous, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.diffChildren">
+            function <span class="apidocSignatureSpan">deku.diff.</span>diffChildren
+            <span class="apidocSignatureSpan">(previous, next, parentPath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.diffNode">
+            function <span class="apidocSignatureSpan">deku.diff.</span>diffNode
+            <span class="apidocSignatureSpan">(prev, next, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">deku.diff.</span>Actions</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deku.diff.Actions">module deku.diff.Actions</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.case">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>case
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.caseOn">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>caseOn
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.insertBefore">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>insertBefore
+            <span class="apidocSignatureSpan">(a0)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.insertChild">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>insertChild
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.removeAttribute">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>removeAttribute
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.removeChild">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>removeChild
+            <span class="apidocSignatureSpan">(a0)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.removeNode">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>removeNode
+            <span class="apidocSignatureSpan">(a0)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.replaceNode">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>replaceNode
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.sameNode">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>sameNode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.setAttribute">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>setAttribute
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.updateChild">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>updateChild
+            <span class="apidocSignatureSpan">(a0, a1)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.updateChildren">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>updateChildren
+            <span class="apidocSignatureSpan">(a0)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.diff.Actions.updateThunk">
+            function <span class="apidocSignatureSpan">deku.diff.Actions.</span>updateThunk
+            <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deku.dom">module deku.dom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.dom.create">
+            function <span class="apidocSignatureSpan">deku.dom.</span>create
+            <span class="apidocSignatureSpan">(vnode, path, dispatch, context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.dom.update">
+            function <span class="apidocSignatureSpan">deku.dom.</span>update
+            <span class="apidocSignatureSpan">(dispatch, context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deku.renderString">module deku.renderString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.renderString.renderString">
+            function <span class="apidocSignatureSpan">deku.</span>renderString
+            <span class="apidocSignatureSpan">(element, context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deku.setAttribute">module deku.setAttribute</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.setAttribute.setAttribute">
+            function <span class="apidocSignatureSpan">deku.</span>setAttribute
+            <span class="apidocSignatureSpan">(DOMElement, name, value, previousValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.setAttribute.removeAttribute">
+            function <span class="apidocSignatureSpan">deku.setAttribute.</span>removeAttribute
+            <span class="apidocSignatureSpan">(DOMElement, name, previousValue)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deku.string">module deku.string</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.string.render">
+            function <span class="apidocSignatureSpan">deku.string.</span>render
+            <span class="apidocSignatureSpan">(element, context)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deku.update">module deku.update</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.update.default">
+            function <span class="apidocSignatureSpan">deku.update.</span>default
+            <span class="apidocSignatureSpan">(dispatch, context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.update.insertAtIndex">
+            function <span class="apidocSignatureSpan">deku.update.</span>insertAtIndex
+            <span class="apidocSignatureSpan">(parent, index, el)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.deku.vnode">module deku.vnode</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.create">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>create
+            <span class="apidocSignatureSpan">(type, attributes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.createEmptyElement">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>createEmptyElement
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.createPath">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>createPath
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.createTextElement">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>createTextElement
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.createThunkElement">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>createThunkElement
+            <span class="apidocSignatureSpan">(component, key, props, children)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.groupByKey">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>groupByKey
+            <span class="apidocSignatureSpan">(children)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.isEmpty">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>isEmpty
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.isSameThunk">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>isSameThunk
+            <span class="apidocSignatureSpan">(left, right)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.isText">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>isText
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.isThunk">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>isThunk
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.deku.vnode.isValidAttribute">
+            function <span class="apidocSignatureSpan">deku.vnode.</span>isValidAttribute
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deku" id="apidoc.module.deku">module deku</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deku.createApp" id="apidoc.element.deku.createApp">
+        function <span class="apidocSignatureSpan">deku.</span>createApp
+        <span class="apidocSignatureSpan">(container, dispatch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create(container, dispatch) {
+  var options = arguments.length &lt;= 2 || arguments[2] === undefined ? {} : arguments[2];
+
+  var oldVnode = null;
+  var node = null;
+  var rootId = options.id || '0';
+
+  if (container &amp;&amp; container.childNodes.length &gt; 0) {
+    container.innerHTML = '';
+  }
+
+  var update = function update(newVnode, context) {
+    var changes = (0, _diff.diffNode)(oldVnode, newVnode, rootId);
+    node = changes.reduce(dom.update(dispatch, context), node);
+    oldVnode = newVnode;
+    return node;
+  };
+
+  var create = function create(vnode, context) {
+    node = dom.create(vnode, rootId, dispatch, context);
+    if (container) container.appendChild(node);
+    oldVnode = vnode;
+    return node;
+  };
+
+  return function (vnode) {
+    var context = arguments.length &lt;= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+    return node !== null ? update(vnode, context) : create(vnode, context);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.element" id="apidoc.element.deku.element">
+        function <span class="apidocSignatureSpan">deku.</span>element
+        <span class="apidocSignatureSpan">(type, attributes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create(type, attributes) {
+  for (var _len = arguments.length, children = Array(_len &gt; 2 ? _len - 2 : 0), _key = 2; _key &lt; _len; _key++) {
+    children[_key - 2] = arguments[_key];
+  }
+
+  if (!type) throw new TypeError('element() needs a type.');
+
+  attributes = attributes || {};
+  children = (children || []).reduce(reduceChildren, []);
+
+  var key = typeof attributes.key === 'string' || typeof attributes.key === 'number' ? attributes.key : undefined;
+
+  delete attributes.key;
+
+  if ((typeof type === 'undefined' ? 'undefined' : _typeof(type)) === 'object' || typeof type === 'function') {
+    return createThunkElement(type, key, attributes, children);
+  }
+
+  return {
+    attributes: attributes,
+    children: children,
+    type: type,
+    key: key
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.h" id="apidoc.element.deku.h">
+        function <span class="apidocSignatureSpan">deku.</span>h
+        <span class="apidocSignatureSpan">(type, attributes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create(type, attributes) {
+  for (var _len = arguments.length, children = Array(_len &gt; 2 ? _len - 2 : 0), _key = 2; _key &lt; _len; _key++) {
+    children[_key - 2] = arguments[_key];
+  }
+
+  if (!type) throw new TypeError('element() needs a type.');
+
+  attributes = attributes || {};
+  children = (children || []).reduce(reduceChildren, []);
+
+  var key = typeof attributes.key === 'string' || typeof attributes.key === 'number' ? attributes.key : undefined;
+
+  delete attributes.key;
+
+  if ((typeof type === 'undefined' ? 'undefined' : _typeof(type)) === 'object' || typeof type === 'function') {
+    return createThunkElement(type, key, attributes, children);
+  }
+
+  return {
+    attributes: attributes,
+    children: children,
+    type: type,
+    key: key
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deku.create" id="apidoc.module.deku.create">module deku.create</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deku.create.default" id="apidoc.element.deku.create.default">
+        function <span class="apidocSignatureSpan">deku.create.</span>default
+        <span class="apidocSignatureSpan">(vnode, path, dispatch, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createElement(vnode, path, dispatch, context) {
+  if ((0, _element.isText)(vnode)) {
+    var value = typeof vnode.nodeValue === 'string' || typeof vnode.nodeValue === 'number' ? vnode.nodeValue : '';
+    return document.createTextNode(value);
+  }
+
+  if ((0, _element.isEmpty)(vnode)) {
+    return document.createElement('noscript');
+  }
+
+  if ((0, _element.isThunk)(vnode)) {
+    var props = vnode.props;
+    var component = vnode.component;
+    var children = vnode.children;
+    var onCreate = component.onCreate;
+
+    var render = typeof component === 'function' ? component : component.render;
+    var model = {
+      children: children,
+      props: props,
+      path: path,
+      dispatch: dispatch,
+      context: context
+    };
+    var output = render(model);
+    var _DOMElement = createElement(output, (0, _element.createPath)(path, output.key || '0'), dispatch, context);
+    if (onCreate) onCreate(model);
+    vnode.state = {
+      vnode: output,
+      model: model
+    };
+    return _DOMElement;
+  }
+
+  var cached = cache[vnode.type];
+
+  if (typeof cached === 'undefined') {
+    cached = cache[vnode.type] = _svg2.default.isElement(vnode.type) ? document.createElementNS(_svg2.default.namespace, vnode.type
+) : document.createElement(vnode.type);
+  }
+
+  var DOMElement = cached.cloneNode(false);
+
+  for (var name in vnode.attributes) {
+    (0, _setAttribute.setAttribute)(DOMElement, name, vnode.attributes[name]);
+  }
+
+  vnode.children.forEach(function (node, index) {
+    if (node === null || node === undefined) {
+      return;
+    }
+    var child = createElement(node, (0, _element.createPath)(path, node.key || index), dispatch, context);
+    DOMElement.appendChild(child);
+  });
+
+  return DOMElement;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deku.diff" id="apidoc.module.deku.diff">module deku.diff</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.diffAttributes" id="apidoc.element.deku.diff.diffAttributes">
+        function <span class="apidocSignatureSpan">deku.diff.</span>diffAttributes
+        <span class="apidocSignatureSpan">(previous, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function diffAttributes(previous, next) {
+  var setAttribute = Actions.setAttribute;
+  var removeAttribute = Actions.removeAttribute;
+
+  var changes = [];
+  var pAttrs = previous.attributes;
+  var nAttrs = next.attributes;
+
+  for (var name in nAttrs) {
+    if (nAttrs[name] !== pAttrs[name]) {
+      changes.push(setAttribute(name, nAttrs[name], pAttrs[name]));
+    }
+  }
+
+  for (var name in pAttrs) {
+    if (!(name in nAttrs)) {
+      changes.push(removeAttribute(name, pAttrs[name]));
+    }
+  }
+
+  return changes;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.diffChildren" id="apidoc.element.deku.diff.diffChildren">
+        function <span class="apidocSignatureSpan">deku.diff.</span>diffChildren
+        <span class="apidocSignatureSpan">(previous, next, parentPath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function diffChildren(previous, next, parentPath) {
+  var insertChild = Actions.insertChild;
+  var updateChild = Actions.updateChild;
+  var removeChild = Actions.removeChild;
+  var insertBefore = Actions.insertBefore;
+  var updateChildren = Actions.updateChildren;
+  var CREATE = diffActions.CREATE;
+  var UPDATE = diffActions.UPDATE;
+  var MOVE = diffActions.MOVE;
+  var REMOVE = diffActions.REMOVE;
+
+  var previousChildren = (0, _element.groupByKey)(previous.children);
+  var nextChildren = (0, _element.groupByKey)(next.children);
+  var key = function key(a) {
+    return a.key;
+  };
+  var changes = [];
+
+  function effect(type, prev, next, pos) {
+    var nextPath = next ? (0, _element.createPath)(parentPath, next.key == null ? next.index : next.key) : null;
+    switch (type) {
+      case CREATE:
+        {
+          changes.push(insertChild(next.item, pos, nextPath));
+          break;
+        }
+      case UPDATE:
+        {
+          var actions = diffNode(prev.item, next.item, nextPath);
+          if (actions.length &gt; 0) {
+            changes.push(updateChild(prev.index, actions));
+          }
+          break;
+        }
+      case MOVE:
+        {
+          var actions = diffNode(prev.item, next.item, nextPath);
+          actions.push(insertBefore(pos));
+          changes.push(updateChild(prev.index, actions));
+          break;
+        }
+      case REMOVE:
+        {
+          changes.push(removeChild(prev.index));
+          break;
+        }
+    }
+  }
+
+  (0, diffActions.default)(previousChildren, nextChildren, effect, key);
+
+  return updateChildren(changes);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.diffNode" id="apidoc.element.deku.diff.diffNode">
+        function <span class="apidocSignatureSpan">deku.diff.</span>diffNode
+        <span class="apidocSignatureSpan">(prev, next, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function diffNode(prev, next, path) {
+  var changes = [];
+  var replaceNode = Actions.replaceNode;
+  var setAttribute = Actions.setAttribute;
+  var sameNode = Actions.sameNode;
+  var removeNode = Actions.removeNode;
+  var updateThunk = Actions.updateThunk;
+
+  // No left node to compare it to
+  // TODO: This should just return a createNode action
+
+  if (prev === null || prev === undefined) {
+    throw new Error('Left node must not be null or undefined');
+  }
+
+  // Bail out and skip updating this whole sub-tree
+  if (prev === next) {
+    changes.push(sameNode());
+    return changes;
+  }
+
+  // Remove
+  if (prev != null &amp;&amp; next == null) {
+    changes.push(removeNode(prev));
+    return changes;
+  }
+
+  // Replace
+  if (prev.type !== next.type) {
+    changes.push(replaceNode(prev, next, path));
+    return changes;
+  }
+
+  // Text
+  if ((0, _element.isText)(next)) {
+    if (prev.nodeValue !== next.nodeValue) {
+      changes.push(setAttribute('nodeValue', next.nodeValue, prev.nodeValue));
+    }
+    return changes;
+  }
+
+  // Thunk
+  if ((0, _element.isThunk)(next)) {
+    if ((0, _element.isSameThunk)(prev, next)) {
+      changes.push(updateThunk(prev, next, path));
+    } else {
+      changes.push(replaceNode(prev, next, path));
+    }
+    return changes;
+  }
+
+  // Empty
+  if ((0, _element.isEmpty)(next)) {
+    return changes;
+  }
+
+  changes = diffAttributes(prev, next);
+  changes.push(diffChildren(prev, next, path));
+
+  return changes;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deku.diff.Actions" id="apidoc.module.deku.diff.Actions">module deku.diff.Actions</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.case" id="apidoc.element.deku.diff.Actions.case">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>case
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">case = function (a0, a1) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Modify a DOM element given an array of actions. A context can be set
+ * that will be used to render any custom elements.
+ */
+
+function patch(dispatch, context) {
+return function (DOMElement, action) {
+  _diff.Actions.<span class="apidocCodeKeywordSpan">case</span>({
+    setAttribute: function setAttribute(name, value, previousValue) {
+      (0, _setAttribute2.setAttribute)(DOMElement, name, value, previousValue);
+    },
+    removeAttribute: function removeAttribute(name, previousValue) {
+      (0, _setAttribute2.removeAttribute)(DOMElement, name, previousValue);
+    },
+    insertBefore: function insertBefore(index) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.caseOn" id="apidoc.element.deku.diff.Actions.caseOn">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>caseOn
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">caseOn = function (a0, a1, a2) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.insertBefore" id="apidoc.element.deku.diff.Actions.insertBefore">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>insertBefore
+        <span class="apidocSignatureSpan">(a0)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insertBefore = function (a0) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Slightly nicer insertBefore
+ */
+
+var insertAtIndex = exports.insertAtIndex = function insertAtIndex(parent, index, el) {
+  var target = parent.childNodes[index];
+  if (target) {
+    parent.<span class="apidocCodeKeywordSpan">insertBefore</span>(el, target);
+  } else {
+    parent.appendChild(el);
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.insertChild" id="apidoc.element.deku.diff.Actions.insertChild">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>insertChild
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">insertChild = function (a0, a1, a2) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.removeAttribute" id="apidoc.element.deku.diff.Actions.removeAttribute">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>removeAttribute
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeAttribute = function (a0, a1) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  case 'nodeValue':
+    DOMElement.innerHTML = '';
+    break;
+  case 'value':
+    DOMElement.value = '';
+    break;
+  default:
+    DOMElement.<span class="apidocCodeKeywordSpan">removeAttribute</span>(name);
+    break;
+}
+}
+
+function setAttribute(DOMElement, name, value, previousValue) {
+var eventType = _events2.default[name];
+if (value === previousValue) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.removeChild" id="apidoc.element.deku.diff.Actions.removeChild">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>removeChild
+        <span class="apidocSignatureSpan">(a0)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeChild = function (a0) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+        changes.forEach(function (change) {
+_diff.Actions.case({
+  insertChild: function insertChild(vnode, index, path) {
+    insertAtIndex(DOMElement, index, (0, _create2.default)(vnode, path, dispatch, context));
+  },
+  removeChild: function removeChild(index) {
+    DOMElement.<span class="apidocCodeKeywordSpan">removeChild</span>(childNodes[index]);
+  },
+  updateChild: function updateChild(index, actions) {
+    var update = patch(dispatch, context);
+    actions.forEach(function (action) {
+      return update(childNodes[index], action);
+    });
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.removeNode" id="apidoc.element.deku.diff.Actions.removeNode">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>removeNode
+        <span class="apidocSignatureSpan">(a0)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeNode = function (a0) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.replaceNode" id="apidoc.element.deku.diff.Actions.replaceNode">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>replaceNode
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">replaceNode = function (a0, a1, a2) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.sameNode" id="apidoc.element.deku.diff.Actions.sameNode">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>sameNode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sameNode = function () {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.setAttribute" id="apidoc.element.deku.diff.Actions.setAttribute">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>setAttribute
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAttribute = function (a0, a1, a2) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.updateChild" id="apidoc.element.deku.diff.Actions.updateChild">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>updateChild
+        <span class="apidocSignatureSpan">(a0, a1)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateChild = function (a0, a1) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.updateChildren" id="apidoc.element.deku.diff.Actions.updateChildren">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>updateChildren
+        <span class="apidocSignatureSpan">(a0)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateChildren = function (a0) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.diff.Actions.updateThunk" id="apidoc.element.deku.diff.Actions.updateThunk">
+        function <span class="apidocSignatureSpan">deku.diff.Actions.</span>updateThunk
+        <span class="apidocSignatureSpan">(a0, a1, a2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateThunk = function (a0, a1, a2) {return fn.apply(this, arguments);}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deku.dom" id="apidoc.module.deku.dom">module deku.dom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deku.dom.create" id="apidoc.element.deku.dom.create">
+        function <span class="apidocSignatureSpan">deku.dom.</span>create
+        <span class="apidocSignatureSpan">(vnode, path, dispatch, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createElement(vnode, path, dispatch, context) {
+  if ((0, _element.isText)(vnode)) {
+    var value = typeof vnode.nodeValue === 'string' || typeof vnode.nodeValue === 'number' ? vnode.nodeValue : '';
+    return document.createTextNode(value);
+  }
+
+  if ((0, _element.isEmpty)(vnode)) {
+    return document.createElement('noscript');
+  }
+
+  if ((0, _element.isThunk)(vnode)) {
+    var props = vnode.props;
+    var component = vnode.component;
+    var children = vnode.children;
+    var onCreate = component.onCreate;
+
+    var render = typeof component === 'function' ? component : component.render;
+    var model = {
+      children: children,
+      props: props,
+      path: path,
+      dispatch: dispatch,
+      context: context
+    };
+    var output = render(model);
+    var _DOMElement = createElement(output, (0, _element.createPath)(path, output.key || '0'), dispatch, context);
+    if (onCreate) onCreate(model);
+    vnode.state = {
+      vnode: output,
+      model: model
+    };
+    return _DOMElement;
+  }
+
+  var cached = cache[vnode.type];
+
+  if (typeof cached === 'undefined') {
+    cached = cache[vnode.type] = _svg2.default.isElement(vnode.type) ? document.createElementNS(_svg2.default.namespace, vnode.type
+) : document.createElement(vnode.type);
+  }
+
+  var DOMElement = cached.cloneNode(false);
+
+  for (var name in vnode.attributes) {
+    (0, _setAttribute.setAttribute)(DOMElement, name, vnode.attributes[name]);
+  }
+
+  vnode.children.forEach(function (node, index) {
+    if (node === null || node === undefined) {
+      return;
+    }
+    var child = createElement(node, (0, _element.createPath)(path, node.key || index), dispatch, context);
+    DOMElement.appendChild(child);
+  });
+
+  return DOMElement;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.dom.update" id="apidoc.element.deku.dom.update">
+        function <span class="apidocSignatureSpan">deku.dom.</span>update
+        <span class="apidocSignatureSpan">(dispatch, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function patch(dispatch, context) {
+  return function (DOMElement, action) {
+    _diff.Actions.case({
+      setAttribute: function setAttribute(name, value, previousValue) {
+        (0, _setAttribute2.setAttribute)(DOMElement, name, value, previousValue);
+      },
+      removeAttribute: function removeAttribute(name, previousValue) {
+        (0, _setAttribute2.removeAttribute)(DOMElement, name, previousValue);
+      },
+      insertBefore: function insertBefore(index) {
+        insertAtIndex(DOMElement.parentNode, index, DOMElement);
+      },
+      sameNode: function sameNode() {},
+      updateChildren: function updateChildren(changes) {
+        // Create a clone of the children so we can reference them later
+        // using their original position even if they move around
+        var childNodes = Array.prototype.slice.apply(DOMElement.childNodes);
+
+        changes.forEach(function (change) {
+          _diff.Actions.case({
+            insertChild: function insertChild(vnode, index, path) {
+              insertAtIndex(DOMElement, index, (0, _create2.default)(vnode, path, dispatch, context));
+            },
+            removeChild: function removeChild(index) {
+              DOMElement.removeChild(childNodes[index]);
+            },
+            updateChild: function updateChild(index, actions) {
+              var update = patch(dispatch, context);
+              actions.forEach(function (action) {
+                return update(childNodes[index], action);
+              });
+            }
+          }, change);
+        });
+      },
+      updateThunk: function updateThunk(prev, next, path) {
+        var props = next.props;
+        var children = next.children;
+        var component = next.component;
+        var onUpdate = component.onUpdate;
+
+        var render = typeof component === 'function' ? component : component.render;
+        var prevNode = prev.state.vnode;
+        var model = {
+          children: children,
+          props: props,
+          path: path,
+          dispatch: dispatch,
+          context: context
+        };
+        var nextNode = render(model);
+        var changes = (0, _diff.diffNode)(prevNode, nextNode, (0, _element.createPath)(path, '0'));
+        DOMElement = changes.reduce(patch(dispatch, context), DOMElement);
+        if (onUpdate) onUpdate(model);
+        next.state = {
+          vnode: nextNode,
+          model: model
+        };
+      },
+      replaceNode: function replaceNode(prev, next, path) {
+        var newEl = (0, _create2.default)(next, path, dispatch, context);
+        var parentEl = DOMElement.parentNode;
+        if (parentEl) parentEl.replaceChild(newEl, DOMElement);
+        DOMElement = newEl;
+        removeThunks(prev);
+      },
+      removeNode: function removeNode(prev) {
+        removeThunks(prev);
+        DOMElement.parentNode.removeChild(DOMElement);
+        DOMElement = null;
+      }
+    }, action);
+
+    return DOMElement;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deku.renderString" id="apidoc.module.deku.renderString">module deku.renderString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deku.renderString.renderString" id="apidoc.element.deku.renderString.renderString">
+        function <span class="apidocSignatureSpan">deku.</span>renderString
+        <span class="apidocSignatureSpan">(element, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function renderString(element, context) {
+  var path = arguments.length &lt;= 2 || arguments[2] === undefined ? '0' : arguments[2];
+
+  if ((0, _element.isText)(element)) {
+    return element.nodeValue;
+  }
+
+  if ((0, _element.isEmpty)(element)) {
+    return '&lt;noscript&gt;&lt;/noscript&gt;';
+  }
+
+  if ((0, _element.isThunk)(element)) {
+    var props = element.props;
+    var component = element.component;
+    var _children = element.children;
+    var render = component.render;
+
+    var output = render({
+      children: _children,
+      props: props,
+      path: path,
+      context: context
+    });
+    return renderString(output, context, path);
+  }
+
+  var attributes = element.attributes;
+  var type = element.type;
+  var children = element.children;
+
+  var innerHTML = attributes.innerHTML;
+  var str = '&lt;' + type + attributesToString(attributes) + '&gt;';
+
+  if (innerHTML) {
+    str += innerHTML;
+  } else {
+    str += children.map(function (child, i) {
+      return renderString(child, context, path + '.' + (child.key == null ? i : child.key));
+    }).join('');
+  }
+
+  str += '&lt;/' + type + '&gt;';
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deku.setAttribute" id="apidoc.module.deku.setAttribute">module deku.setAttribute</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deku.setAttribute.setAttribute" id="apidoc.element.deku.setAttribute.setAttribute">
+        function <span class="apidocSignatureSpan">deku.</span>setAttribute
+        <span class="apidocSignatureSpan">(DOMElement, name, value, previousValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setAttribute(DOMElement, name, value, previousValue) {
+  var eventType = _events2.default[name];
+  if (value === previousValue) {
+    return;
+  }
+  if (eventType) {
+    if (typeof previousValue === 'function') {
+      DOMElement.removeEventListener(eventType, previousValue);
+    }
+    DOMElement.addEventListener(eventType, value);
+    return;
+  }
+  if (!(0, _element.isValidAttribute)(value)) {
+    removeAttribute(DOMElement, name, previousValue);
+    return;
+  }
+  switch (name) {
+    case 'checked':
+    case 'disabled':
+    case 'innerHTML':
+    case 'nodeValue':
+      DOMElement[name] = value;
+      break;
+    case 'selected':
+      DOMElement.selected = value;
+      // Fix for IE/Safari where select is not correctly selected on change
+      if (DOMElement.tagName === 'OPTION' &amp;&amp; DOMElement.parentNode) {
+        var select = DOMElement.parentNode;
+        select.selectedIndex = (0, _indexOf2.default)(select.options, DOMElement);
+      }
+      break;
+    case 'value':
+      (0, _setify2.default)(DOMElement, value);
+      break;
+    default:
+      DOMElement.setAttributeNS((0, _svgAttributeNamespace2.default)(name), name, value);
+      break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.setAttribute.removeAttribute" id="apidoc.element.deku.setAttribute.removeAttribute">
+        function <span class="apidocSignatureSpan">deku.setAttribute.</span>removeAttribute
+        <span class="apidocSignatureSpan">(DOMElement, name, previousValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function removeAttribute(DOMElement, name, previousValue) {
+  var eventType = _events2.default[name];
+  if (eventType) {
+    if (typeof previousValue === 'function') {
+      DOMElement.removeEventListener(eventType, previousValue);
+    }
+    return;
+  }
+  switch (name) {
+    case 'checked':
+    case 'disabled':
+    case 'selected':
+      DOMElement[name] = false;
+      break;
+    case 'innerHTML':
+    case 'nodeValue':
+      DOMElement.innerHTML = '';
+      break;
+    case 'value':
+      DOMElement.value = '';
+      break;
+    default:
+      DOMElement.removeAttribute(name);
+      break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  case 'nodeValue':
+    DOMElement.innerHTML = '';
+    break;
+  case 'value':
+    DOMElement.value = '';
+    break;
+  default:
+    DOMElement.<span class="apidocCodeKeywordSpan">removeAttribute</span>(name);
+    break;
+}
+}
+
+function setAttribute(DOMElement, name, value, previousValue) {
+var eventType = _events2.default[name];
+if (value === previousValue) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deku.string" id="apidoc.module.deku.string">module deku.string</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deku.string.render" id="apidoc.element.deku.string.render">
+        function <span class="apidocSignatureSpan">deku.string.</span>render
+        <span class="apidocSignatureSpan">(element, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function renderString(element, context) {
+  var path = arguments.length &lt;= 2 || arguments[2] === undefined ? '0' : arguments[2];
+
+  if ((0, _element.isText)(element)) {
+    return element.nodeValue;
+  }
+
+  if ((0, _element.isEmpty)(element)) {
+    return '&lt;noscript&gt;&lt;/noscript&gt;';
+  }
+
+  if ((0, _element.isThunk)(element)) {
+    var props = element.props;
+    var component = element.component;
+    var _children = element.children;
+    var render = component.render;
+
+    var output = render({
+      children: _children,
+      props: props,
+      path: path,
+      context: context
+    });
+    return renderString(output, context, path);
+  }
+
+  var attributes = element.attributes;
+  var type = element.type;
+  var children = element.children;
+
+  var innerHTML = attributes.innerHTML;
+  var str = '&lt;' + type + attributesToString(attributes) + '&gt;';
+
+  if (innerHTML) {
+    str += innerHTML;
+  } else {
+    str += children.map(function (child, i) {
+      return renderString(child, context, path + '.' + (child.key == null ? i : child.key));
+    }).join('');
+  }
+
+  str += '&lt;/' + type + '&gt;';
+  return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deku.update" id="apidoc.module.deku.update">module deku.update</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deku.update.default" id="apidoc.element.deku.update.default">
+        function <span class="apidocSignatureSpan">deku.update.</span>default
+        <span class="apidocSignatureSpan">(dispatch, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function patch(dispatch, context) {
+  return function (DOMElement, action) {
+    _diff.Actions.case({
+      setAttribute: function setAttribute(name, value, previousValue) {
+        (0, _setAttribute2.setAttribute)(DOMElement, name, value, previousValue);
+      },
+      removeAttribute: function removeAttribute(name, previousValue) {
+        (0, _setAttribute2.removeAttribute)(DOMElement, name, previousValue);
+      },
+      insertBefore: function insertBefore(index) {
+        insertAtIndex(DOMElement.parentNode, index, DOMElement);
+      },
+      sameNode: function sameNode() {},
+      updateChildren: function updateChildren(changes) {
+        // Create a clone of the children so we can reference them later
+        // using their original position even if they move around
+        var childNodes = Array.prototype.slice.apply(DOMElement.childNodes);
+
+        changes.forEach(function (change) {
+          _diff.Actions.case({
+            insertChild: function insertChild(vnode, index, path) {
+              insertAtIndex(DOMElement, index, (0, _create2.default)(vnode, path, dispatch, context));
+            },
+            removeChild: function removeChild(index) {
+              DOMElement.removeChild(childNodes[index]);
+            },
+            updateChild: function updateChild(index, actions) {
+              var update = patch(dispatch, context);
+              actions.forEach(function (action) {
+                return update(childNodes[index], action);
+              });
+            }
+          }, change);
+        });
+      },
+      updateThunk: function updateThunk(prev, next, path) {
+        var props = next.props;
+        var children = next.children;
+        var component = next.component;
+        var onUpdate = component.onUpdate;
+
+        var render = typeof component === 'function' ? component : component.render;
+        var prevNode = prev.state.vnode;
+        var model = {
+          children: children,
+          props: props,
+          path: path,
+          dispatch: dispatch,
+          context: context
+        };
+        var nextNode = render(model);
+        var changes = (0, _diff.diffNode)(prevNode, nextNode, (0, _element.createPath)(path, '0'));
+        DOMElement = changes.reduce(patch(dispatch, context), DOMElement);
+        if (onUpdate) onUpdate(model);
+        next.state = {
+          vnode: nextNode,
+          model: model
+        };
+      },
+      replaceNode: function replaceNode(prev, next, path) {
+        var newEl = (0, _create2.default)(next, path, dispatch, context);
+        var parentEl = DOMElement.parentNode;
+        if (parentEl) parentEl.replaceChild(newEl, DOMElement);
+        DOMElement = newEl;
+        removeThunks(prev);
+      },
+      removeNode: function removeNode(prev) {
+        removeThunks(prev);
+        DOMElement.parentNode.removeChild(DOMElement);
+        DOMElement = null;
+      }
+    }, action);
+
+    return DOMElement;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.update.insertAtIndex" id="apidoc.element.deku.update.insertAtIndex">
+        function <span class="apidocSignatureSpan">deku.update.</span>insertAtIndex
+        <span class="apidocSignatureSpan">(parent, index, el)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function insertAtIndex(parent, index, el) {
+  var target = parent.childNodes[index];
+  if (target) {
+    parent.insertBefore(el, target);
+  } else {
+    parent.appendChild(el);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.deku.vnode" id="apidoc.module.deku.vnode">module deku.vnode</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.create" id="apidoc.element.deku.vnode.create">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>create
+        <span class="apidocSignatureSpan">(type, attributes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function create(type, attributes) {
+  for (var _len = arguments.length, children = Array(_len &gt; 2 ? _len - 2 : 0), _key = 2; _key &lt; _len; _key++) {
+    children[_key - 2] = arguments[_key];
+  }
+
+  if (!type) throw new TypeError('element() needs a type.');
+
+  attributes = attributes || {};
+  children = (children || []).reduce(reduceChildren, []);
+
+  var key = typeof attributes.key === 'string' || typeof attributes.key === 'number' ? attributes.key : undefined;
+
+  delete attributes.key;
+
+  if ((typeof type === 'undefined' ? 'undefined' : _typeof(type)) === 'object' || typeof type === 'function') {
+    return createThunkElement(type, key, attributes, children);
+  }
+
+  return {
+    attributes: attributes,
+    children: children,
+    type: type,
+    key: key
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.createEmptyElement" id="apidoc.element.deku.vnode.createEmptyElement">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>createEmptyElement
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createEmptyElement() {
+  return {
+    type: '#empty'
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.createPath" id="apidoc.element.deku.vnode.createPath">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>createPath
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createPath() {
+  for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 &lt; _len2; _key2++) {
+    args[_key2] = arguments[_key2];
+  }
+
+  return args.join('.');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.createTextElement" id="apidoc.element.deku.vnode.createTextElement">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>createTextElement
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createTextElement(text) {
+  return {
+    type: '#text',
+    nodeValue: text
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.createThunkElement" id="apidoc.element.deku.vnode.createThunkElement">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>createThunkElement
+        <span class="apidocSignatureSpan">(component, key, props, children)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createThunkElement(component, key, props, children) {
+  return {
+    type: '#thunk',
+    children: children,
+    props: props,
+    component: component,
+    key: key
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.groupByKey" id="apidoc.element.deku.vnode.groupByKey">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>groupByKey
+        <span class="apidocSignatureSpan">(children)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function groupByKey(children) {
+  return children.reduce(function (acc, child, i) {
+    if (child != null &amp;&amp; child !== false) {
+      acc.push({
+        key: String(child.key || i),
+        item: child,
+        index: i
+      });
+    }
+    return acc;
+  }, []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.isEmpty" id="apidoc.element.deku.vnode.isEmpty">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>isEmpty
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isEmpty(node) {
+  return node.type === '#empty';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.isSameThunk" id="apidoc.element.deku.vnode.isSameThunk">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>isSameThunk
+        <span class="apidocSignatureSpan">(left, right)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isSameThunk(left, right) {
+  return isThunk(left) &amp;&amp; isThunk(right) &amp;&amp; left.component === right.component;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.isText" id="apidoc.element.deku.vnode.isText">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>isText
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isText(node) {
+  return node.type === '#text';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.isThunk" id="apidoc.element.deku.vnode.isThunk">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>isThunk
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isThunk(node) {
+  return node.type === '#thunk';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.deku.vnode.isValidAttribute" id="apidoc.element.deku.vnode.isValidAttribute">
+        function <span class="apidocSignatureSpan">deku.vnode.</span>isValidAttribute
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isValidAttribute(value) {
+  if (typeof value === 'boolean') return value;
+  if (typeof value === 'function') return false;
+  if (value === '') return true;
+  if (value === undefined) return false;
+  if (value === null) return false;
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
